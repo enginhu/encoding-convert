@@ -2,6 +2,6 @@ import os
 
 
 class Config(object):
-    SECRET_KEY = os.environ.get('SECRET_KEY') or 'S23ADSafdpojkfldşsşjş21312409udjoş2349'
+    SECRET_KEY = os.environ.get('SECRET_KEY') or 'very-very-secret-key-123789456'
     UPLOAD_FOLDER = 'static/uploads'
-    FILE_EXTENSIONS = set(['txt', 'srt'])
+    ALLOWED_EXTENSIONS = set(['txt', 'srt'])
