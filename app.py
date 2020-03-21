@@ -9,9 +9,6 @@ from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 app.config.from_object(Config)
-SECRET_KEY = os.environ.get('SECRET_KEY') or 'S23ADSafdpojkfldşsşjş21312409udjoş2349'
-UPLOAD_FOLDER = 'static/uploads'
-ALLOWED_EXTENSIONS = set(['txt', 'srt'])
 target_format = 'UTF-8'
 
 
