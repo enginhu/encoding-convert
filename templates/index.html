@@ -1,0 +1,43 @@
+﻿{% extends 'base.html' %}
+{% block content %}
+    <div class="m-2 row d-flex justify-content-center align-items-center" style="height: 98vh; width: 98vw">
+        <div class="col-lg-6">
+            <p class="py-2 display-3">Encoding Converter</p>
+            <span class="alert-info lead p-2">Türkçe altyazı dosyalarındaki bozuk karakterleri düzeltir.</span>
+
+            <p class="py-2 display-4">Altyazı dosyası seçin.</p>
+            <small class="alert-warning p-2">sadece srt ve txt dosyaları</small>
+
+            <p class="py-2">
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <ul class=flashes>
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% endwith %}
+            </p>
+            <div class="py-2">
+                <form method="post" action="/upload" enctype="multipart/form-data">
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupFileAddon01">Dosya</span>
+                            </div>
+                            <div class="custom-file">
+                                <input type="file" name="file "class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                <label class="custom-file-label" for="inputGroupFile01">...</label>
+                            </div>
+                        </div>
+
+                    <p>
+                        <input type="submit" value="Gönder" class="btn btn-success">
+                    </p>
+                </form>
+                <p class="text-sm text-right text-muted"><small><a href="https://github.com/enginhu">github.com/enginhu</a></small></p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
