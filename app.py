@@ -62,7 +62,7 @@ def upload_file():
 @app.route('/uploads/<path:filename>', methods=['GET', 'POST'])
 def download_file(filename):
     downloads = os.path.join(app.config['UPLOAD_FOLDER'])
-    return send_from_directory(directory=downloads, filename=filename)
+    return send_from_directory(directory=downloads, filename=filename, as_attachment=True)
 
 
 if __name__ == '__main__':
